@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Reasoning Category Explorer — qwen-7b</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --panel: #161b22;
+    --muted: #8b949e;
+    --border: #30363d;
+    --accent: #f0b429;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--fg);
+    font-family: 'DejaVu Sans', system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  header {
+    padding: 28px 36px 18px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #161b22 0%, var(--bg) 100%);
+  }
+  header h1 { margin: 0 0 8px; font-size: 24px; }
+  header p { margin: 0; color: var(--muted); font-size: 13px; }
+  .tabs {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding: 16px 36px; border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; background: var(--bg); z-index: 10;
+  }
+  .tab {
+    padding: 8px 14px; border-radius: 999px; cursor: pointer; border: 1px solid var(--border);
+    background: var(--panel); color: var(--fg); font-size: 12px; transition: 0.15s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .tab .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .tab:hover { border-color: var(--accent); }
+  .tab.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  main { padding: 28px 36px 80px; }
+  .panel {
+    display: none;
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px; background: var(--panel);
+  }
+  .panel.active { display: block; }
+  .panel h2 { margin: 0 0 6px; font-size: 22px; display: flex; align-items: center; gap: 12px; }
+  .panel h2 .pill {
+    font-size: 11px; padding: 3px 10px; border-radius: 999px;
+    border: 1px solid currentColor; opacity: 0.85;
+  }
+  .panel .meta { color: var(--muted); margin-bottom: 24px; font-size: 13px; }
+  .exemplars { display: grid; gap: 10px; }
+  .ex {
+    padding: 12px 16px; border-radius: 8px;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid var(--accent);
+    font-size: 14px;
+  }
+  .ex .activation {
+    float: right; font-size: 11px; color: var(--muted);
+    font-family: monospace; padding-left: 12px;
+  }
+  footer {
+    padding: 20px 36px; color: var(--muted); font-size: 12px;
+    border-top: 1px solid var(--border);
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🧠 Reasoning Category Explorer</h1>
+  <p>
+    Each cluster below is a feature discovered by a Top-K=3 sparse autoencoder
+    trained on 65876 sentence-pooled residuals from <strong>qwen-7b</strong> thinking-model
+    rollouts. Click a tab to browse the top exemplars of that "reasoning primitive."
+  </p>
+</header>
+
+<div class="tabs"><div class="tab active" data-target="panel-0" style="border-color:#f0b429"><span class="dot" style="background:#f0b429"></span><strong>0</strong> · Definition</div><div class="tab " data-target="panel-1" style="border-color:#3b82f6"><span class="dot" style="background:#3b82f6"></span><strong>1</strong> · Backtracking</div><div class="tab " data-target="panel-2" style="border-color:#10b981"><span class="dot" style="background:#10b981"></span><strong>2</strong> · Deduction</div><div class="tab " data-target="panel-3" style="border-color:#ef4444"><span class="dot" style="background:#ef4444"></span><strong>3</strong> · Deduction</div><div class="tab " data-target="panel-4" style="border-color:#a78bfa"><span class="dot" style="background:#a78bfa"></span><strong>4</strong> · Uncategorized</div><div class="tab " data-target="panel-5" style="border-color:#06b6d4"><span class="dot" style="background:#06b6d4"></span><strong>5</strong> · Deduction</div><div class="tab " data-target="panel-6" style="border-color:#f97316"><span class="dot" style="background:#f97316"></span><strong>6</strong> · Deduction</div><div class="tab " data-target="panel-7" style="border-color:#ec4899"><span class="dot" style="background:#ec4899"></span><strong>7</strong> · Uncategorized</div><div class="tab " data-target="panel-8" style="border-color:#84cc16"><span class="dot" style="background:#84cc16"></span><strong>8</strong> · Backtracking</div><div class="tab " data-target="panel-9" style="border-color:#8b5cf6"><span class="dot" style="background:#8b5cf6"></span><strong>9</strong> · Backtracking</div></div>
+
+<main><div class="panel active" id="panel-0" style="border-color:#f0b429"><h2 style="color:#f0b429">  Category 0: Definition   <span class="pill">3947 sentences ·   confidence 1.00</span></h2><div class="meta">Top exemplars (sorted by SAE activation magnitude):</div><div class="exemplars"><div class="ex" style="border-left-color:#f0b429">Let me think again.</div><div class="ex" style="border-left-color:#f0b429">Let me think again.</div><div class="ex" style="border-left-color:#f0b429">Let me think again.</div><div class="ex" style="border-left-color:#f0b429">Let me think again.</div><div class="ex" style="border-left-color:#f0b429">Let me think again.</div><div class="ex" style="border-left-color:#f0b429">Let me think again.</div><div class="ex" style="border-left-color:#f0b429">Let me think again.</div><div class="ex" style="border-left-color:#f0b429">Let me think again.</div><div class="ex" style="border-left-color:#f0b429">Let me think again.</div><div class="ex" style="border-left-color:#f0b429">Let me think again.</div></div></div><div class="panel " id="panel-1" style="border-color:#3b82f6"><h2 style="color:#3b82f6">  Category 1: Backtracking   <span class="pill">11071 sentences ·   confidence 1.00</span></h2><div class="meta">Top exemplars (sorted by SAE activation magnitude):</div><div class="exemplars"><div class="ex" style="border-left-color:#3b82f6">Not entirely sure.</div><div class="ex" style="border-left-color:#3b82f6">I'm not sure.</div><div class="ex" style="border-left-color:#3b82f6">Not sure.</div><div class="ex" style="border-left-color:#3b82f6">So this might not be the right answer either.</div><div class="ex" style="border-left-color:#3b82f6">I'm not sure.</div><div class="ex" style="border-left-color:#3b82f6">I'm not certain.</div><div class="ex" style="border-left-color:#3b82f6">I'm not sure.</div><div class="ex" style="border-left-color:#3b82f6">I'm not sure.</div><div class="ex" style="border-left-color:#3b82f6">I'm not sure about this one.</div><div class="ex" style="border-left-color:#3b82f6">Not sure.</div></div></div><div class="panel " id="panel-2" style="border-color:#10b981"><h2 style="color:#10b981">  Category 2: Deduction   <span class="pill">15089 sentences ·   confidence 0.10</span></h2><div class="meta">Top exemplars (sorted by SAE activation magnitude):</div><div class="exemplars"><div class="ex" style="border-left-color:#10b981">Peripheral vasodilation</div><div class="ex" style="border-left-color:#10b981">Pertussis</div><div class="ex" style="border-left-color:#10b981">Mercedes-Benz dealership</div><div class="ex" style="border-left-color:#10b981">Human papillomavirus</div><div class="ex" style="border-left-color:#10b981">Hepatitis</div><div class="ex" style="border-left-color:#10b981">Decreasing myocardial contractility</div><div class="ex" style="border-left-color:#10b981">Intellectualization</div><div class="ex" style="border-left-color:#10b981">Tuberculosis</div><div class="ex" style="border-left-color:#10b981">Shoe store</div><div class="ex" style="border-left-color:#10b981">Meningitis</div></div></div><div class="panel " id="panel-3" style="border-color:#ef4444"><h2 style="color:#ef4444">  Category 3: Deduction   <span class="pill">307 sentences ·   confidence 1.00</span></h2><div class="meta">Top exemplars (sorted by SAE activation magnitude):</div><div class="exemplars"><div class="ex" style="border-left-color:#ef4444">Okay, so I have this physics problem here.</div><div class="ex" style="border-left-color:#ef4444">Okay, so I have this chemistry problem here.</div><div class="ex" style="border-left-color:#ef4444">Okay, so I have this question about powerful numbers.</div><div class="ex" style="border-left-color:#ef4444">Okay, so I have this problem here about Mr.</div><div class="ex" style="border-left-color:#ef4444">Okay, so I have this math problem here about proportions.</div><div class="ex" style="border-left-color:#ef4444">Okay, so I have this problem about signals and sampling.</div><div class="ex" style="border-left-color:#ef4444">Okay, so I have this question here about sentence classification.</div><div class="ex" style="border-left-color:#ef4444">Okay, so I have this question about child attachment styles.</div><div class="ex" style="border-left-color:#ef4444">Okay, so I've got this programming problem to solve.</div><div class="ex" style="border-left-color:#ef4444">Okay, so I've got this limit problem to solve.</div></div></div><div class="panel " id="panel-4" style="border-color:#a78bfa"><h2 style="color:#a78bfa">  Category 4: Uncategorized   <span class="pill">8360 sentences ·   confidence 0.00</span></h2><div class="meta">Top exemplars (sorted by SAE activation magnitude):</div><div class="exemplars"><div class="ex" style="border-left-color:#a78bfa">668.75 *</div><div class="ex" style="border-left-color:#a78bfa">0.00051 is 0.0005 + 0.00001.</div><div class="ex" style="border-left-color:#a78bfa">+0.0005 is 0.02350</div><div class="ex" style="border-left-color:#a78bfa">66.0608 * 0.005 = 0.330304.</div><div class="ex" style="border-left-color:#a78bfa">1 * 2.82744 = 2.82744</div><div class="ex" style="border-left-color:#a78bfa">0.0428 * 0.6 = 0.02568</div><div class="ex" style="border-left-color:#a78bfa">0.0428 * 0.0428 ≈ 0.0018</div><div class="ex" style="border-left-color:#a78bfa">+0.00001 is 0.02351.</div><div class="ex" style="border-left-color:#a78bfa">8.988e9 is 8.98</div><div class="ex" style="border-left-color:#a78bfa">66.0608 * 0.505.</div></div></div><div class="panel " id="panel-5" style="border-color:#06b6d4"><h2 style="color:#06b6d4">  Category 5: Deduction   <span class="pill">303 sentences ·   confidence 1.00</span></h2><div class="meta">Top exemplars (sorted by SAE activation magnitude):</div><div class="exemplars"><div class="ex" style="border-left-color:#06b6d4">Okay, so I have this physics problem here.</div><div class="ex" style="border-left-color:#06b6d4">Okay, so I have this chemistry problem here.</div><div class="ex" style="border-left-color:#06b6d4">Okay, so I have this question about powerful numbers.</div><div class="ex" style="border-left-color:#06b6d4">Okay, so I have this problem here about Mr.</div><div class="ex" style="border-left-color:#06b6d4">Okay, so I have this math problem here about proportions.</div><div class="ex" style="border-left-color:#06b6d4">Okay, so I have this problem about signals and sampling.</div><div class="ex" style="border-left-color:#06b6d4">Okay, so I have this question here about sentence classification.</div><div class="ex" style="border-left-color:#06b6d4">Okay, so I have this question about child attachment styles.</div><div class="ex" style="border-left-color:#06b6d4">Okay, so I've got this programming problem to solve.</div><div class="ex" style="border-left-color:#06b6d4">Okay, so I've got this limit problem to solve.</div></div></div><div class="panel " id="panel-6" style="border-color:#f97316"><h2 style="color:#f97316">  Category 6: Deduction   <span class="pill">316 sentences ·   confidence 1.00</span></h2><div class="meta">Top exemplars (sorted by SAE activation magnitude):</div><div class="exemplars"><div class="ex" style="border-left-color:#f97316">Okay, so I have this physics problem here.</div><div class="ex" style="border-left-color:#f97316">Okay, so I have this chemistry problem here.</div><div class="ex" style="border-left-color:#f97316">Okay, so I have this question about powerful numbers.</div><div class="ex" style="border-left-color:#f97316">Okay, so I have this problem here about Mr.</div><div class="ex" style="border-left-color:#f97316">Okay, so I have this math problem here about proportions.</div><div class="ex" style="border-left-color:#f97316">Okay, so I have this problem about signals and sampling.</div><div class="ex" style="border-left-color:#f97316">Okay, so I have this question here about sentence classification.</div><div class="ex" style="border-left-color:#f97316">Okay, so I have this question about child attachment styles.</div><div class="ex" style="border-left-color:#f97316">Okay, so I've got this programming problem to solve.</div><div class="ex" style="border-left-color:#f97316">Okay, so I've got this limit problem to solve.</div></div></div><div class="panel " id="panel-7" style="border-color:#ec4899"><h2 style="color:#ec4899">  Category 7: Uncategorized   <span class="pill">8489 sentences ·   confidence 0.00</span></h2><div class="meta">Top exemplars (sorted by SAE activation magnitude):</div><div class="exemplars"><div class="ex" style="border-left-color:#ec4899">Answer: D.</div><div class="ex" style="border-left-color:#ec4899">Answer: B.</div><div class="ex" style="border-left-color:#ec4899">Answer: C.</div><div class="ex" style="border-left-color:#ec4899">ANSWER: B&lt;｜end▁of▁sentence｜&gt;</div><div class="ex" style="border-left-color:#ec4899">ANSWER: E&lt;｜end▁of▁sentence｜&gt;</div><div class="ex" style="border-left-color:#ec4899">Answer: D&lt;｜end▁of▁sentence｜&gt;</div><div class="ex" style="border-left-color:#ec4899">ANSWER: D&lt;｜end▁of▁sentence｜&gt;</div><div class="ex" style="border-left-color:#ec4899">Answer: E&lt;｜end▁of▁sentence｜&gt;</div><div class="ex" style="border-left-color:#ec4899">Answer: D&lt;｜end▁of▁sentence｜&gt;</div><div class="ex" style="border-left-color:#ec4899">Answer: A&lt;｜end▁of▁sentence｜&gt;</div></div></div><div class="panel " id="panel-8" style="border-color:#84cc16"><h2 style="color:#84cc16">  Category 8: Backtracking   <span class="pill">4759 sentences ·   confidence 1.00</span></h2><div class="meta">Top exemplars (sorted by SAE activation magnitude):</div><div class="exemplars"><div class="ex" style="border-left-color:#84cc16">Wait, wait, wait.</div><div class="ex" style="border-left-color:#84cc16">Wait, wait, wait.</div><div class="ex" style="border-left-color:#84cc16">Wait, wait.</div><div class="ex" style="border-left-color:#84cc16">Wait, wait.</div><div class="ex" style="border-left-color:#84cc16">Wait, wait.</div><div class="ex" style="border-left-color:#84cc16">Wait, wait.</div><div class="ex" style="border-left-color:#84cc16">Wait, no, wait.</div><div class="ex" style="border-left-color:#84cc16">Wait, no, wait.</div><div class="ex" style="border-left-color:#84cc16">Wait, wait.</div><div class="ex" style="border-left-color:#84cc16">Wait, wait, wait.</div></div></div><div class="panel " id="panel-9" style="border-color:#8b5cf6"><h2 style="color:#8b5cf6">  Category 9: Backtracking   <span class="pill">13235 sentences ·   confidence 0.40</span></h2><div class="meta">Top exemplars (sorted by SAE activation magnitude):</div><div class="exemplars"><div class="ex" style="border-left-color:#8b5cf6">Human papillomavirus</div><div class="ex" style="border-left-color:#8b5cf6">Respiratory syncytial virus (RSV)</div><div class="ex" style="border-left-color:#8b5cf6">Option A: Dysphagia.</div><div class="ex" style="border-left-color:#8b5cf6">Skinner and other behaviorists on personality theory.</div><div class="ex" style="border-left-color:#8b5cf6">Two weeks ago, she had streptococcal pharyngitis, which she was treated for with amoxicillin.</div><div class="ex" style="border-left-color:#8b5cf6">Option A: Hypostatization.</div><div class="ex" style="border-left-color:#8b5cf6">Parainfluenza<br>I.</div><div class="ex" style="border-left-color:#8b5cf6">Atlas discounting a note.</div><div class="ex" style="border-left-color:#8b5cf6">Meta pneumo virus<br>B.</div><div class="ex" style="border-left-color:#8b5cf6">The examination shows anterior cervical lymphadenopathy, which means swollen lymph nodes around the neck, nonexudative conjunctivitis on both eyes, a strawberry tongue, an erythematous truncal rash, and edema in the hands and feet.</div></div></div></main>
+
+<footer>
+  Replication of Venhoff et al. 2025
+  (<a href="https://arxiv.org/abs/2510.07364">arXiv:2510.07364</a>) &middot;
+  layer 5, dict size 10, Top-K=3, unit-norm decoder
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.remove('active'));
+    panels.forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.target).classList.add('active');
+  }));
+</script>
+</body>
+</html>

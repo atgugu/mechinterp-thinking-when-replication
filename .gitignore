@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+
+# Caches
+.hf_cache/
+.cache/
+.pytest_cache/
+
+# Heavy artifacts (regenerate from rollouts)
+results/acts/
+results/rollouts/
+results/saes/
+results/steering/
+results/hybrid/
+data/cache/
+
+# OS
+.DS_Store
+*.swp
+*~
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+mi_run.log
+models/

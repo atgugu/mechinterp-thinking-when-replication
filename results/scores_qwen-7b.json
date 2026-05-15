@@ -1,0 +1,83 @@
+{
+  "pair": "qwen-7b",
+  "by_dataset": {
+    "math500": {
+      "base": {
+        "path": "/opt/ml/paper4_thinking_when_replication/results/hybrid/qwen-7b_math500_base.jsonl",
+        "n": 30,
+        "correct": 12,
+        "accuracy": 0.4,
+        "steered_frac_mean": 0.0,
+        "tokens_total": 16863
+      },
+      "full": {
+        "path": "/opt/ml/paper4_thinking_when_replication/results/hybrid/qwen-7b_math500_full.jsonl",
+        "n": 30,
+        "correct": 12,
+        "accuracy": 0.4,
+        "steered_frac_mean": 0.0001363022440305813,
+        "tokens_total": 17003
+      },
+      "only_bias": {
+        "path": "/opt/ml/paper4_thinking_when_replication/results/hybrid/qwen-7b_math500_only_bias.jsonl",
+        "n": 30,
+        "correct": 12,
+        "accuracy": 0.4,
+        "steered_frac_mean": 4.816955684007707e-05,
+        "tokens_total": 16863
+      },
+      "random_firing": {
+        "path": "/opt/ml/paper4_thinking_when_replication/results/hybrid/qwen-7b_math500_random_firing.jsonl",
+        "n": 30,
+        "correct": 12,
+        "accuracy": 0.4,
+        "steered_frac_mean": 0.0006320968113178115,
+        "tokens_total": 18179
+      },
+      "random_vectors": {
+        "path": "/opt/ml/paper4_thinking_when_replication/results/hybrid/qwen-7b_math500_random_vectors.jsonl",
+        "n": 30,
+        "correct": 12,
+        "accuracy": 0.4,
+        "steered_frac_mean": 0.0,
+        "tokens_total": 16863
+      },
+      "thinking": {
+        "path": "/opt/ml/paper4_thinking_when_replication/results/hybrid/qwen-7b_math500_thinking.jsonl",
+        "n": 30,
+        "correct": 12,
+        "accuracy": 0.4,
+        "steered_frac_mean": 0.0,
+        "tokens_total": 45168
+      },
+      "__recovery_pct": 0.0
+    },
+    "gsm8k": {
+      "base": {
+        "path": "/opt/ml/paper4_thinking_when_replication/results/hybrid/qwen-7b_gsm8k_base.jsonl",
+        "n": 50,
+        "correct": 13,
+        "accuracy": 0.26,
+        "steered_frac_mean": 0.0,
+        "tokens_total": 20681
+      },
+      "full": {
+        "path": "/opt/ml/paper4_thinking_when_replication/results/hybrid/qwen-7b_gsm8k_full.jsonl",
+        "n": 50,
+        "correct": 16,
+        "accuracy": 0.32,
+        "steered_frac_mean": 0.002453460843916097,
+        "tokens_total": 19742
+      },
+      "thinking": {
+        "path": "/opt/ml/paper4_thinking_when_replication/results/hybrid/qwen-7b_gsm8k_thinking.jsonl",
+        "n": 50,
+        "correct": 19,
+        "accuracy": 0.38,
+        "steered_frac_mean": 0.0,
+        "tokens_total": 24600
+      },
+      "__recovery_pct": 50.0
+    }
+  }
+}
